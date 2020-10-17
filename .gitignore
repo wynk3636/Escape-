@@ -71,4 +71,8 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 /Assets/Brackeys*
+/Assets/handheldskins*
+/Assets/UnityChan2D*
 /Assets/Brackeys/
+/Assets/handheldskins/
+/Assets/UnityChan2D/
