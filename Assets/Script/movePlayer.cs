@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class movePlayer : MonoBehaviour
 {
@@ -38,17 +39,19 @@ public class movePlayer : MonoBehaviour
     {
         vx = 0;
 
-        if (Input.GetKey("right"))
+        //GetButtonで長押し対応
+        if (Input.GetKey("right") || CrossPlatformInputManager.GetButton("right"))
         {
             vx = speed;
             leftFaced = false;
         }
-        if (Input.GetKey("left"))
+        if (Input.GetKey("left") || CrossPlatformInputManager.GetButton("left"))
         {
             vx = -speed;
             leftFaced = true;
         }
-        if (Input.GetKey("space") && touchLeg){
+        //GetButtonDownで押した時のみ
+        if ((Input.GetKey("space") || CrossPlatformInputManager.GetButtonDown("Jump")) && touchLeg){
             if (!pushFlag)
             {
                 jumpFlag = true;
