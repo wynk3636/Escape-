@@ -116,4 +116,22 @@ public class movePlayer : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(vx));
         animator.SetBool("Jump", isJumping);
     }
+
+
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Floor")
+        {
+            transform.SetParent(col.transform);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Floor")
+        {
+            transform.SetParent(null);
+        }
+    }
 }

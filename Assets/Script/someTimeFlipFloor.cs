@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class someTimeFlipFloor : MonoBehaviour
 {
+    /*
     public int maxCount = 50;
 
     int count = 0;
@@ -12,7 +13,7 @@ public class someTimeFlipFloor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxCount = Random.Range(1, 100);
+        maxCount = Random.Range(1, 300);
         count = 0;
     }
 
@@ -29,6 +30,7 @@ public class someTimeFlipFloor : MonoBehaviour
 
         if(count == maxCount)
         {
+            //キャラが回転してしまうためエラー
             this.transform.Rotate(0, 0, 180);
             count = 0;
             flipFlag = !flipFlag;
@@ -37,4 +39,5 @@ public class someTimeFlipFloor : MonoBehaviour
             maxCount = Random.Range(1, 100);
         }
     }
+    */
 }
