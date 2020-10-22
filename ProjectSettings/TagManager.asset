@@ -8,6 +8,8 @@ TagManager:
   - Floor
   - Wall
   - Hell
+  - Point
+  - GameOver
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,7 @@ public class moveFloor : MonoBehaviour
     public int maxCount = 50;
     int count = 0;
 
+    public static float _speed = 1;
     public float speed = 1;
     Rigidbody2D rbody;
 
@@ -16,6 +17,7 @@ public class moveFloor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _speed = speed;
         rbody = GetComponent<Rigidbody2D>();
         rbody.gravityScale = 0;
 
@@ -27,8 +29,8 @@ public class moveFloor : MonoBehaviour
     void Update()
     {
         //水平移動
-        this.transform.Translate(speed / 50, 0, 0);
-        rbody.velocity = new Vector2(speed, 0);
+        this.transform.Translate(_speed / 50, 0, 0);
+        rbody.velocity = new Vector2(_speed, 0);
     }
     private void FixedUpdate()
     {
@@ -39,8 +41,8 @@ public class moveFloor : MonoBehaviour
         if (count == maxCount)
         {
             count = 0;
-            speed = -speed;
-            this.GetComponent<SpriteRenderer>().flipX = (speed < 0);
+            _speed = -_speed;
+            this.GetComponent<SpriteRenderer>().flipX = (_speed < 0);
             maxCount = Random.Range(1, 100);
         }
     }
@@ -50,8 +52,8 @@ public class moveFloor : MonoBehaviour
     {
         if (col.gameObject.tag == "Wall")
         {
-            speed = -speed;
-            this.GetComponent<SpriteRenderer>().flipX = (speed < 0);
+            _speed = -_speed;
+            this.GetComponent<SpriteRenderer>().flipX = (_speed < 0);
         }
     }
 }

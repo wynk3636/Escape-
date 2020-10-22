@@ -18,7 +18,6 @@ public class somitime_CreatePreFab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     private void CreatePrefab()

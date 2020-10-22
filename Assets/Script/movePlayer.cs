@@ -80,7 +80,7 @@ public class movePlayer : MonoBehaviour
 
         if (jumpFlag)
         {
-            Debug.Log("jump");
+            //Debug.Log("jump");
             jumpFlag = false;
             //上方向に力を加える
             rbody.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
