@@ -39,19 +39,18 @@ public class movePlayer : MonoBehaviour
     {
         vx = 0;
 
-        //GetButtonで長押し対応
-        if (Input.GetKey("right") || CrossPlatformInputManager.GetButton("right"))
+        //GetButtonで長押し対応 GetButtonDownで押した時
+        if (Input.GetKey("right") || CrossPlatformInputManager.GetButton("right") || CrossPlatformInputManager.GetButtonDown("right"))
         {
             vx = speed;
             leftFaced = false;
         }
-        if (Input.GetKey("left") || CrossPlatformInputManager.GetButton("left"))
+        if (Input.GetKey("left") || CrossPlatformInputManager.GetButton("left") || CrossPlatformInputManager.GetButtonDown("left"))
         {
             vx = -speed;
             leftFaced = true;
         }
-        //GetButtonDownで押した時のみ
-        if ((Input.GetKey("space") || CrossPlatformInputManager.GetButtonDown("Jump")) && touchLeg){
+        if ((Input.GetKey("space") || CrossPlatformInputManager.GetButton("Jump") || CrossPlatformInputManager.GetButtonDown("Jump")) && touchLeg){
             if (!pushFlag)
             {
                 jumpFlag = true;
