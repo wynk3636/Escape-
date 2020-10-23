@@ -9,12 +9,12 @@ public class movePlayer : MonoBehaviour
     public float speed = 3;
     public float jumpPower = 8;
 
-    float vx = 0;
-    bool leftFaced = false;
-    bool pushFlag = false;
-    bool jumpFlag = false;
-    bool touchLeg = false;
-    bool isJumping = false;
+    float vx;
+    bool leftFaced;
+    bool pushFlag;
+    bool jumpFlag;
+    bool touchLeg;
+    bool isJumping;
     //bool canAirJump = false;
     //bool doAirJump = false;
 
@@ -26,6 +26,13 @@ public class movePlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        vx = 0;
+        leftFaced = false;
+        pushFlag = false;
+        jumpFlag = false;
+        touchLeg = false;
+        isJumping = false;
+
         animator = GetComponent<Animator>();
         //spriteRenderer = GetComponent<SpriteRenderer>();
 

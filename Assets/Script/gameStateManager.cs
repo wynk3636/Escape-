@@ -5,14 +5,15 @@ using UnityEngine;
 public class gameStateManager : MonoBehaviour
 {
 
-    public static bool gameState = true;
+    public static bool gameState;
+    public GameObject gamePanel;
     public string gameOverObject = "GameOverPanel";
-    GameObject gameObject;
 
     void Start()
     {
-        gameObject = GameObject.Find(gameOverObject);
-        gameObject.SetActive(false);
+        gameState = true;
+        gamePanel = GameObject.Find(gameOverObject);
+        gamePanel.SetActive(false);
     }
 
     void Update()
@@ -20,7 +21,7 @@ public class gameStateManager : MonoBehaviour
 
         if (gameState==false)
         {
-            gameObject.SetActive(true);
+            gamePanel.SetActive(true);
 
             moveFloor._speed = 0;
             Time.timeScale = 0.0f;
