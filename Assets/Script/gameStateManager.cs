@@ -11,6 +11,7 @@ public class gameStateManager : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1.0f;
         gameState = true;
         gamePanel = GameObject.Find(gameOverObject);
         gamePanel.SetActive(false);

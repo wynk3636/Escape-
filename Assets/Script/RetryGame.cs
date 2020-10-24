@@ -11,16 +11,11 @@ public class RetryGame : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-
+        /*
         if (Input.GetMouseButtonDown(0))
         {
-            Time.timeScale = 1.0f;
-            SceneManager.LoadScene(0);
-
-            /*
             var wPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             var hit = Physics2D.Raycast(wPos, Vector2.zero);
 
@@ -28,10 +23,21 @@ public class RetryGame : MonoBehaviour
             {
                 if (hit.collider.gameObject.name == this.name)
                 {
-                    SceneManager.LoadScene(0);
+                    doRetry();
                 }
             }
-            */
         }
+        */
+    }
+
+    public void OnClick()
+    {
+        Debug.Log("Retry");
+        doRetry();
+    }
+
+    private void doRetry()
+    {
+        SceneManager.LoadScene(0);
     }
 }
