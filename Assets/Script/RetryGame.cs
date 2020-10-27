@@ -38,6 +38,6 @@ public class RetryGame : MonoBehaviour
 
     private void doRetry()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("mainScene");
     }
 }
