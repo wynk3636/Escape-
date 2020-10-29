@@ -24,7 +24,7 @@ public class gameStateManager : MonoBehaviour
         {
             gamePanel.SetActive(true);
 
-            moveFloor._speed = 0;
+            //moveFloor._speed = 0;
             Time.timeScale = 0.0f;
         }
     }
